@@ -1,7 +1,7 @@
 
 html {
   background: url(assets/qr.PNG);
-  background-size: cover;
+  background-size: contain;
 }
 
 html,
