@@ -2,6 +2,8 @@
 html {
   background: url(assets/qr.PNG);
   background-size: contain;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 html,
