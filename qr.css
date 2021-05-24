@@ -11,7 +11,7 @@ div
   margin-top: -150px;
   background: url("assets/qr.PNG");
   background-repeat: no-repeat;
-
+  background-size: cover;
 }
 
 html,
