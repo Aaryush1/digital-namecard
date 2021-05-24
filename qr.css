@@ -9,7 +9,9 @@ div
   left: 50%;
   margin-left: -150px;
   margin-top: -150px;
-  background: url("assets/qr.PNG") no-repeat;
+  background: url("assets/qr.PNG");
+  background-repeat: no-repeat;
+
 }
 
 html,
