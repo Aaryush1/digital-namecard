@@ -9,7 +9,7 @@ div
   left: 50%;
   margin-left: -150px;
   margin-top: -150px;
-  background: red;
+  background: url("assets/qr.PNG");
 }
 
 html,
