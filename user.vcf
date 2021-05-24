@@ -11,4 +11,6 @@ item1.ADR;type=WORK;type=pref:;;388 George St\nSydney 2000\, NSW;;;2000;Australi
 item1.X-ABADR:au
 item2.URL;type=pref:qbe.com/ventures
 item2.X-ABLabel:_$!<HomePage>!$_
+item3.URL;type=pref:https://www.linkedin.com/in/alextayl0r/
+item3.X-ABLabel:_$!<LinkedIn>!$_
 END:VCARD
