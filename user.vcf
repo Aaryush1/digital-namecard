@@ -1,16 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-PRODID:-//Apple Inc.//iPhone OS 11.2.2//EN
-N:Gupta;Aaryush;;;
-FN: Aaryush Gupta 
-ORG:Synamic Solutions LLC;
-TITLE:Founder & Product Manager\nSynamic Solutions LLC
-EMAIL;type=INTERNET;type=WORK;type=pref:aaryush@outlook.com
-TEL;type=WORK;type=VOICE:+1 949 331 2850
-item1.ADR;type=WORK;type=pref:;;2829 Dewey Ct\nMiddleton, WI\, NSW;;;
-item1.X-ABADR:us
-item2.URL;type=pref:github.com/Aaryush1
-item2.X-ABLabel:_$!<HomePage>!$_
-item3.URL;type=pref:https://www.linkedin.com/in/aaryush/
-item3.X-ABLabel:LinkedIn
+FN;CHARSET=UTF-8:Aaryush Gupta
+N;CHARSET=UTF-8:Gupta;Aaryush;;;
+EMAIL;CHARSET=UTF-8;type=WORK,INTERNET:aaryush@outlook.com
+TEL;TYPE=CELL:+1 949 331 2850
+ADR;CHARSET=UTF-8;TYPE=HOME:;;2829 Dewey Court;Middleton;WI;53562;United States
+TITLE;CHARSET=UTF-8:Founder & Project Manager
+ORG;CHARSET=UTF-8:Synamic Solutions LLC
+URL;type=WORK;CHARSET=UTF-8:https://www.synamicsolutions.com/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/aaryush/
+X-SOCIALPROFILE;TYPE=Github:https://github.com/Aaryush1/
+REV:2023-11-03T19:01:16.612Z
 END:VCARD
