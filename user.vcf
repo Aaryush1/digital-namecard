@@ -1,16 +1,16 @@
 BEGIN:VCARD
 VERSION:3.0
 PRODID:-//Apple Inc.//iPhone OS 11.2.2//EN
-N:Taylor;Alex;;;
-FN: Alex Taylor 
-ORG:QBE Ventures;
-TITLE:Global Head of Emerging Technology\nQBE Ventures
-EMAIL;type=INTERNET;type=WORK;type=pref:alex.taylor@qbe.com
-TEL;type=WORK;type=VOICE:+61 433 348 418
-item1.ADR;type=WORK;type=pref:;;388 George St\nSydney 2000\, NSW;;;2000;Australia
-item1.X-ABADR:au
-item2.URL;type=pref:qbe.com/ventures
+N:Gupta;Aaryush;;;
+FN: Aaryush Gupta 
+ORG:Synamic Solutions LLC;
+TITLE:Founder & Product Manager\nSynamic Solutions LLC
+EMAIL;type=INTERNET;type=WORK;type=pref:aaryush@outlook.com
+TEL;type=WORK;type=VOICE:+1 949 331 2850
+item1.ADR;type=WORK;type=pref:;;2829 Dewey Ct\nMiddleton, WI\, NSW;;;
+item1.X-ABADR:US
+item2.URL;type=pref:github.com/Aaryush1
 item2.X-ABLabel:_$!<HomePage>!$_
-item3.URL;type=pref:https://www.linkedin.com/in/alextayl0r/
+item3.URL;type=pref:https://www.linkedin.com/in/aaryush/
 item3.X-ABLabel:LinkedIn
 END:VCARD
