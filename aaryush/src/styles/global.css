@@ -551,3 +551,109 @@ dialog.modal[closing] {
 .card--link:hover {
     transform: translateY(-3px);
 }
+
+@media (max-width: 900px) {
+    .container {
+        padding: 0 var(--space-5);
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-6);
+    }
+
+    .hero__headshot {
+        width: 176px;
+        height: 176px;
+    }
+
+    .section {
+        padding: var(--space-7) 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-6) !important;
+    }
+
+    .card {
+        padding: var(--space-6);
+    }
+
+    .section__title {
+        margin-bottom: var(--space-6);
+    }
+
+    .chips {
+        gap: 10px;
+        margin-bottom: var(--space-5);
+    }
+
+    .chip {
+        padding: 7px 12px;
+        font-size: 0.95rem;
+    }
+
+    .badges {
+        gap: 8px;
+    }
+
+    .badge {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .project-card__actions {
+        padding-top: var(--space-4);
+    }
+
+    dialog.modal {
+        width: 92vw;
+        max-width: 92vw;
+        margin: 6vh auto;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .skills-orbit {
+        width: 100%;
+    }
+
+    .pipeline {
+        gap: 10px;
+    }
+
+    .pipe {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero__title {
+        font-size: 2.1rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.15rem;
+    }
+
+    .modal__value {
+        font-size: 1.02rem;
+    }
+
+    .section {
+        padding: var(--space-6) 0;
+    }
+
+    p,
+    li {
+        line-height: 1.65;
+    }
+}
