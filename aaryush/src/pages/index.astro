@@ -1,0 +1,198 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+
+const filterTags = [
+	"Next.js",
+	"FastAPI",
+	"Python",
+	"TypeScript",
+	"Azure",
+	"Kubernetes",
+	"LangChain",
+	"RAG",
+	"SQL",
+];
+const uniqueStacks = Array.from(new Set(projects.flatMap((p) => p.stack))).filter((t) => filterTags.includes(t));
+---
+
+<BaseLayout title="Aaryush Gupta — AI Engineer">
+	<main>
+		<section class="hero container" style="position:relative; overflow:hidden;">
+			<div class="hero__parallax" data-parallax></div>
+			<div class="hero__text" data-reveal>
+				<h1 class="hero__title">Aaryush Gupta</h1>
+				<p class="hero__subtitle">AI Engineer building compliant, scalable products that ship.</p>
+				<p>Business-minded, technically rigorous. I design and deploy AI systems end-to-end.</p>
+				<div class="hero__actions">
+					<a class="btn btn--primary" href="#projects">View Projects</a>
+					<a class="btn" href="/Aaryush Contact Info.vcf" download>Download Contact Card</a>
+				</div>
+				<div class="hero__meta">
+					<span>Madison, WI</span>
+					<a href="mailto:aaryush@outlook.com">aaryush@outlook.com</a>
+					<a href="tel:+19493312850">(949) 331-2850</a>
+				</div>
+			</div>
+			<img class="hero__headshot" src="/assets/HS%20Grad.jpg" alt="Headshot of Aaryush Gupta" data-reveal />
+		</section>
+
+		<section class="section container" id="about" data-accent="violet">
+			<h2 class="section__title">About</h2>
+			<div class="grid">
+				<div class="card" style="grid-column: span 12;" data-reveal>
+					<p>I’m an AI-first engineer and product leader. I’ve led architecture and delivery for HIPAA-compliant platforms processing millions monthly, shipped full-stack products from MVP to scale, and aligned teams around clear roadmaps. I balance rigorous engineering with pragmatic product instincts to move fast without breaking trust.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section container" id="experience" data-accent="blue">
+			<h2 class="section__title">Experience</h2>
+			<div class="grid">
+				<div class="card card--link" style="grid-column: span 12;" data-reveal>
+					<a class="card__overlay" href="#experience-cylerity" aria-label="Cylerity details"></a>
+					<div class="card__content">
+						<h3>Cylerity — Lead AI Engineer (Jan 2024 – Present)</h3>
+						<p>Own architecture, AI systems, and team for a fintech-healthcare startup underwriting loans on $4B+ claims data; targeted AR reduction from ~45 to 1 day.</p>
+						<ul>
+							<li>Designed HIPAA-compliant infrastructure; built scalable training/inference for PHI at ~$4MM/month throughput.</li>
+							<li>Overhauled Azure Data Factory pipelines; improved performance and maintainability.</li>
+							<li>Shipped full-stack customer web app (Next.js, Node.js, Firebase, SQL Server, Azure App Service).</li>
+							<li>Implemented Confluence/Jira workflows; supported fundraising (high 6 figures + 8-figure lending facility).</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card card--link" style="grid-column: span 12;" data-reveal>
+					<a class="card__overlay" href="#experience-skale" aria-label="Skale.win details"></a>
+					<div class="card__content">
+						<h3>Skale.win — Founding Engineer/Head of Product (Jun 2024 – Present)</h3>
+						<p>Stealth platform that simulates interviews and gives instant, role‑specific feedback. I led product and engineering from MVP, building it to adapt quickly as AI tools change</p>
+						<ul>
+							<li>Stealth GenAI for interviews and upskilling; built MVP and modular architecture.</li>
+							<li>Integrated ElevenLabs, STT, reasoning models; on-demand prompt tuning for rapid iteration.</li>
+							<li>Perplexity-powered tailoring; migrated to OpenRouter for multi-vendor flexibility.</li>
+							<li>~100 beta users; GTM Q3 2025. Stack: FastAPI, Next.js, Kubernetes, Azure, OpenRouter, ElevenLabs, Perplexity.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card card--link" style="grid-column: span 12;" data-reveal>
+					<a class="card__overlay" href="#experience-consulting" aria-label="Consulting details"></a>
+					<div class="card__content">
+						<h3>AI Engineering Consultant — Founder (Dec 2024 – Present)</h3>
+						<p>I help teams ship AI features that make a real dent—clean data in, clear value out.</p>
+						<ul>
+							<li>Advisory and builds across healthcare, education, and innovation ecosystems.</li>
+							<li>UMN Discovery Launchpad: AI ingestion + full-stack app; automated progress tracking & gap detection.</li>
+							<li>Univise: RAG chatbot; 2,000 users in first week; best pitch at Transcend.</li>
+							<li>SmartBenAI: HIPAA-compliant claims parsing using Gemini Vision.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section container" id="projects" data-accent="teal">
+			<h2 class="section__title">Selected Projects</h2>
+			<div class="chips" data-filters>
+				{uniqueStacks.map((tech) => (
+					<button class="chip" data-chip={tech} aria-pressed="false">{tech}</button>
+				))}
+			</div>
+			<div class="grid">
+				{projects.map((p) => {
+					const allowed = p.stack.filter((s) => filterTags.includes(s));
+					return (
+						<div class="card project-card" style="grid-column: span 6;" data-reveal data-techs={allowed.join(',')}>
+							<h3>{p.title}</h3>
+							<p>{p.summary}</p>
+							<div class="impact-row">
+								{p.impact.map((i) => (<span class="impact">{i}</span>))}
+							</div>
+							<div class="badges" style="margin-top: var(--space-4);">
+								{allowed.slice(0, 4).map((s) => (<span class="badge">{s}</span>))}
+							</div>
+							<div class="project-card__actions">
+								<button class="btn btn--primary" data-open-modal={p.id}>More</button>
+							</div>
+							<dialog class="modal" id={p.id} aria-labelledby={`${p.id}-title`}>
+								<h3 id={`${p.id}-title`} class="modal__title">{p.title}</h3>
+								<p class="modal__value">{p.value}</p>
+								<div class="modal__section">
+									<p><strong>Problem</strong> — {p.problem}</p>
+								</div>
+								<div class="modal__section">
+									<p><strong>What I built</strong></p>
+									<ul style="margin-top: 8px;">
+										{p.details && p.details.map((d) => (<li>{d}</li>))}
+									</ul>
+								</div>
+								<div class="modal__section">
+									<p><strong>Result</strong> — {p.result}</p>
+									{p.metrics && (
+										<div class="metrics">
+											{p.metrics.map((m) => (
+												<div class="metric">
+													<div class="metric__label">{m.label}</div>
+													<div class="metric__value">{m.value}</div>
+												</div>
+											))}
+										</div>
+									)}
+								</div>
+								<div class="modal__actions">
+									<button class="btn" data-close-modal>Close</button>
+								</div>
+							</dialog>
+						</div>
+					);
+				})}
+			</div>
+		</section>
+
+		<section class="section container" id="skills" data-accent="pink">
+			<h2 class="section__title">Skills</h2>
+			<div class="skills-grid" data-reveal>
+				<div class="skills-col card">
+					<p class="skills-title">Product & Full‑Stack</p>
+					<div class="badges">
+						<span class="badge" data-tip="Web apps & sites">Next.js</span>
+						<span class="badge" data-tip="Frontend & tooling">TypeScript</span>
+						<span class="badge" data-tip="Services & scripts">Node.js</span>
+						<span class="badge" data-tip="APIs & services">FastAPI</span>
+						<span class="badge" data-tip="Relational DB">PostgreSQL</span>
+					</div>
+				</div>
+				<div class="skills-col card">
+					<p class="skills-title">AI/ML & Data</p>
+					<div class="badges">
+						<span class="badge" data-tip="Research & prototyping">PyTorch</span>
+						<span class="badge" data-tip="Orchestration & tooling">LangChain</span>
+						<span class="badge" data-tip="Retrieval with sources">RAG</span>
+						<span class="badge" data-tip="Analytics & pipelines">SQL</span>
+					</div>
+				</div>
+				<div class="skills-col card">
+					<p class="skills-title">Cloud & Infra</p>
+					<div class="badges">
+						<span class="badge" data-tip="App services, data">Azure</span>
+						<span class="badge" data-tip="Infra & services">AWS</span>
+						<span class="badge" data-tip="Containers">Docker</span>
+						<span class="badge" data-tip="Orchestration">Kubernetes</span>
+					</div>
+				</div>
+				<div class="skills-col card">
+					<p class="skills-title">Ops & Tooling</p>
+					<div class="badges">
+						<span class="badge">OpenRouter</span>
+						<span class="badge">Perplexity</span>
+						<span class="badge">HuggingFace</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer container">
+			<p>© {new Date().getFullYear()} Aaryush Gupta</p>
+		</footer>
+	</main>
+</BaseLayout>
