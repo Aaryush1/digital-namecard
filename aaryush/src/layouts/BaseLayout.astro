@@ -16,10 +16,8 @@ const { title = 'Aaryush Gupta — AI Engineer' } = Astro.props;
 	</head>
 	<body>
 		<slot />
-		<script type="module">
-			import '/src/scripts/motion.ts';
-			import '/src/scripts/modals.ts';
-			import '/src/scripts/filters.ts';
-		</script>
+		<script src="/src/scripts/motion.ts"></script>
+		<script src="/src/scripts/modals.ts"></script>
+		<script src="/src/scripts/filters.ts"></script>
 	</body>
 </html>
