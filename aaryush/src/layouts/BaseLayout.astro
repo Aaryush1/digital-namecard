@@ -3,7 +3,7 @@ import "../styles/global.css";
 const { title = 'Aaryush Gupta — AI Engineer' } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -12,11 +12,14 @@ const { title = 'Aaryush Gupta — AI Engineer' } = Astro.props;
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 		<title>{title}</title>
+		<script>document.documentElement.classList.remove('no-js');</script>
 	</head>
 	<body>
 		<slot />
-		<script type="module" src="/src/scripts/motion.ts" defer></script>
-		<script type="module" src="/src/scripts/modals.ts" defer></script>
-		<script type="module" src="/src/scripts/filters.ts" defer></script>
+		<script type="module">
+			import '/src/scripts/motion.ts';
+			import '/src/scripts/modals.ts';
+			import '/src/scripts/filters.ts';
+		</script>
 	</body>
 </html>
